@@ -1,0 +1,18 @@
+body {
+	padding-left: 20px;
+}
+
+.title-count {
+  text-align: left;
+  font-weight: bold;
+}
+.title {
+  margin-bottom: 25px;
+  font-size: 48px;
+    color: #317e36;
+}
+.count {
+  margin-bottom: 70px;
+    font-size: 30px;
+  color: #999999;
+}

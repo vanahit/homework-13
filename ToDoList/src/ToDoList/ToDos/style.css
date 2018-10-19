@@ -1,0 +1,19 @@
+.todo {
+  display: table-cell;
+  vertical-align: top;
+  padding:20px;
+  width: 926px;
+  text-align: left;
+}
+.update, .todo:hover {
+  background-color: #9ccc65;
+}
+.todo-text {
+  float: left;
+  color: black;
+  display: inline-block;
+  margin-left: 20px;
+  width: 600px;
+  font-size: 34px;
+  word-wrap:break-word;
+}

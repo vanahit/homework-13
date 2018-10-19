@@ -1,0 +1,17 @@
+.todo-input {
+  background-color: #b2dfda;
+}
+.create-button {
+  background-color: #004e41;
+  color: white;
+}
+.text-input {
+  padding-left: 5px;
+  color: #999999;
+  font-size: 24px;
+  width: 584px;
+  height: 63px;
+  border: 1px solid #004e41;
+  border-radius: 10px;
+  font-weight: bold;
+}
