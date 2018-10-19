@@ -17,3 +17,6 @@
   font-size: 34px;
   word-wrap:break-word;
 }
+.edit-img:hover {
+  cursor: pointer;
+}

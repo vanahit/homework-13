@@ -4,27 +4,28 @@ import img from './img/edit_40.png';
 export default class OneToDo extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { toDoLabel: false, editState: false, text: this.props.toDoText.text};
+		this.state = { toDoLabel: false, editState: false, text: this.props.toDoText.text, update: null};
     	this.labelStatusChange = this.labelStatusChange.bind(this);
     	this.editIconShow = this.editIconShow.bind(this);
     	this.editIconHide = this.editIconHide.bind(this);
     	this.changeEditState = this.changeEditState.bind(this);
     	this.toDoUpdate = this.toDoUpdate.bind(this);
     	this.handleChange = this.handleChange.bind(this);
-    	
     }
     handleChange(e) {
     	this.setState({text: e.target.value});
+    	if (this.state.text) {
+    		this.updateBtn.removeAttribute('disabled');
+    	}
     }
     toDoUpdate(e) {
     	if (this.state.text){
-    		this.setState({
-    		editState: false
-       	});
+	    		this.setState({
+	    		editState: false
+       		});
     	} else {
-    		return e;
+    		e.target.disabled = 'disabled';
     	}
-    	 
     }
     changeEditState() {
     	this.setState({
@@ -50,9 +51,7 @@ export default class OneToDo extends Component {
 	    this.editImg.style.display = 'none';
 	}
 	render() {
-
 			return (
-
 				<div>
 				{
 					!this.state.editState &&
@@ -61,10 +60,12 @@ export default class OneToDo extends Component {
 				                <div className="todo-text">
 				                  {this.state.text} 
 				                    <img 
-				                      src={img} 
-				                      onClick={this.changeEditState}
-				                      ref = {(img) => this.editImg = img}
-				                      /> 
+				                    	className="edit-img"
+				                    	alt="edit Icon"
+				                      	src={img} 
+				                      	onClick={this.changeEditState}
+				                      	ref = {(img) => this.editImg = img}
+				                     /> 
 				                    </div>
 				                    {
 				                        !this.state.toDoLabel && 
@@ -96,6 +97,7 @@ export default class OneToDo extends Component {
 						    			onChange={this.handleChange}
 						    		/>
 						    			<button className="all-buttons create-button" 
+						    				ref = {(btn) => this.updateBtn = btn}
 						    				onClick={this.toDoUpdate}	
 						    			>
 						    				Update
@@ -105,6 +107,6 @@ export default class OneToDo extends Component {
 						</div>  		
 				}
 				</div>
-				);
+			);
 	}	
 }

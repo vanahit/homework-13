@@ -7,7 +7,6 @@ export default class ToDos extends Component {
     super(props);
     this.createToDo = this.createToDo.bind(this);
   }
-
   createToDo(toDo) {
     return (
       <li key={toDo.key}>
@@ -21,14 +20,11 @@ export default class ToDos extends Component {
   render() {
     let toDoDetails = this.props.details;
     let toDoList = toDoDetails.map(this.createToDo);
-
     return (
-       <ul className="todo-list">
-     
-          {toDoList}
-       </ul>
-
-      )
+      <ul className="todo-list">
+        {toDoList}
+      </ul>
+    )
   }
 }
 

@@ -3,10 +3,6 @@ import './App.css';
 import ToDoList from './ToDoList/ToDoList';
 
 class App extends Component {
-  constructor(props){
-    super(props);
-  }
-
   render() {
     return (
       <div>
@@ -14,7 +10,6 @@ class App extends Component {
           <ToDoList />
         </div>
       </div>
-
     );
   }
 }
