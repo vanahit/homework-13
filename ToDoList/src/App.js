@@ -5,13 +5,8 @@ import ToDoList from './ToDoList/ToDoList';
 class App extends Component {
   render() {
     return (
-      <div>
-        <div className="input">
-          <ToDoList />
-        </div>
-      </div>
+        <ToDoList />
     );
   }
 }
-
 export default App;

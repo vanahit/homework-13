@@ -1,3 +1,11 @@
+/*ToDoList styles*/
+button {
+  cursor: pointer;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
 .todo-input {
   background-color: #b2dfda;
 }
@@ -14,4 +22,27 @@
   border: 1px solid #004e41;
   border-radius: 10px;
   font-weight: bold;
+}
+.todo-parent {
+  margin-bottom: 40px;
+}
+.all-todos {
+  display: table-cell;
+  vertical-align: middle;
+  width: 926px;
+  height: 140px;
+  border-radius: 10px;
+  background-color: #b2dfda;
+  box-sizing: border-box;
+}
+.all-buttons {
+  margin-left: 30px;
+  width: 200px;
+  height: 63px;
+  font-size: 36px;
+  border:0;
+  border-radius: 10px;
+}
+.title-left {
+  width: 926px;
 }

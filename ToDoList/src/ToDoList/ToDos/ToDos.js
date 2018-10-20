@@ -21,7 +21,7 @@ export default class ToDos extends Component {
     let toDoDetails = this.props.details;
     let toDoList = toDoDetails.map(this.createToDo);
     return (
-      <ul className="todo-list">
+      <ul className='todo-list'>
         {toDoList}
       </ul>
     )

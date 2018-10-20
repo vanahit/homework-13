@@ -9,14 +9,18 @@ export default class ToDoList extends Component {
 		this.state = {
 			toDos: [],
 			uniqueKey : 0,
+			toDoText : ''
 		};
 		this.addToDo = this.addToDo.bind(this);
+		this.handleChange = this.handleChange.bind(this);
 	}
+	handleChange(e) {
+      	this.setState({ toDoText: e.target.value});
+    }
 	addToDo(e) {
-		
-		if (this.toDoText.value !== "") {
+		if (this.state.toDoText !== '') {
 			let newToDo = {
-				text: this.toDoText.value,
+				text:this.state.toDoText,
 				key: this.state.uniqueKey,
 			};
 			this.setState((prevState) => {
@@ -24,37 +28,40 @@ export default class ToDoList extends Component {
 					toDos : prevState.toDos.concat(newToDo),
 					uniqueKey : !this.state.toDos.length ?  1 : this.state.uniqueKey + 1,
 				}
-
 			});
 		}
-		this.toDoText.value = "";
+		this.setState({toDoText: ''});
 		e.preventDefault();
 	}
 	render() {
     return (
 	    	<div>
-		    	<Title count={this.state.uniqueKey}/>
-			    	<main>
-			    		<div className="todo-parent">
-			    			<div className="all-todos todo-input">
-			    				<form onSubmit={this.addToDo}>
-			    					<input 
-			    						ref = {(a) => this.toDoText = a}
-			    						placeholder="To Do text goes here" 
-			    						className="text-input" />
-			    					<button className="all-buttons create-button">
-			    						Create
-			    					</button>
-			    				</form>
-			    			</div>
-			    		</div> 
-			    		<div>
-			    		<ToDos 
-			    			details={this.state.toDos}
-			    		/>
+		    	<main>
+			    	<div className='title-left'>
+			    		<Title count={this.state.uniqueKey}/>
+			    	</div>
+			    	<div className='todo-parent'>
+			    		<div className='all-todos todo-input'>
+			    			<form>
+			    				<input 
+			    					value={this.state.toDoText} 
+						    		onChange={this.handleChange}
+			    					placeholder='To Do text goes here' 
+			    					className='text-input' />
+			    				<button type='button' 
+			    					className='all-buttons create-button'
+			    					onClick ={this.addToDo}	
+			    				>
+			    					Create
+			    				</button>
+			    			</form>
 			    		</div>
-			    	</main>
-		    </div>
+			    	</div> 
+			   		<ToDos 
+				   		details={this.state.toDos}
+				   	/>
+			   	</main>
+			</div>
         )
 	}
 }
