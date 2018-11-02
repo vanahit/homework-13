@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './style.css';
-import OneToDo from './OneToDo/OneToDo';
+import OneToDo from '../OneToDo/OneToDo';
 
 export default class ToDos extends Component {
   constructor(props) {

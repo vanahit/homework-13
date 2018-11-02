@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Update from './Update/Update';
-import Edited from './Edited/Edited';
+import Update from '../Update/Update';
+import Edited from '../Edited/Edited';
 
 export default class OneToDo extends Component {
 	constructor(props) {
